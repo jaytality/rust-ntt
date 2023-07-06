@@ -12,9 +12,11 @@ $tbl_rustwipes = "CREATE TABLE IF NOT EXISTS 'rust_wipes' (
     id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
     `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `server` VARCHAR(255) NOT NULL,
-    `address` VARCHAR(16) NOT NULL,
+    `address` VARCHAR(16) NOT NULL,,
+    `size` INT(11) NOT NULL,
+    `seed` VARCHAR(255) NOT NULL,
     `action` TEXT NOT NULL,
-    `duration` INTEGER(11) NOT NULL
+    `duration` VARCHAR(32) NOT NULL
 )";
 
 $result = $mysqli->query($tbl_rustwipes);
