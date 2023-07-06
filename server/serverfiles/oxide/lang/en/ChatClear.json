@@ -1,0 +1,6 @@
+{
+  "CommandClearAll": "clearall",
+  "CommandClearSelf": "clear",
+  "ChatCleared": "Chat has been cleared, mmm fresh!",
+  "NotAllowed": "You are not allowed to use the '{0}' command"
+}
