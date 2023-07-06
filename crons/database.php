@@ -8,6 +8,15 @@ if(!$mysqli->real_connect(getCfg("database.host"), getCfg("database.user"), getC
     die("Connection Error (" . mysqli_connect_error() . ") " . mysqli_connect_error());
 }
 
-$mysqli->query("CREATE TABLE IF NOT EXISTS 'rust_wipes'");
+$tbl_rustwipes = "CREATE TABLE IF NOT EXISTS 'rust_wipes' (
+    id INT(11) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    `timestamp` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    `server` VARCHAR(255) NOT NULL,
+    `address` VARCHAR(16) NOT NULL,
+    `action` TEXT NOT NULL,
+    `duration` INTEGER(11) NOT NULL
+)";
+
+$result = $mysqli->query($tbl_rustwipes);
 
 $mysqli->close();
