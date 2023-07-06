@@ -208,7 +208,7 @@ $runTime = number_format((float) $runTime, 10);
 // insert new wipe record in the DB
 $sqlWipe = "INSERT INTO `rust_wipes`
 (`server`, `address`, `size`, `seed`, `action`, `duration`) VALUES
-('No Tech Tree', '192.168.1.12', '" . $mapsize . "', '" . $mapseed ."', 'Server Wiped', '" . $runTime . "')";
+('" . $getCfg('rust.server') . "', '" . $getCfg('rust.address') . "', '" . $mapsize . "', '" . $mapseed ."', 'Server Wiped', '" . $runTime . "')";
 
 $result = $mysqli->query($sqlWipe);
 
