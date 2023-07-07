@@ -1,2 +1,10 @@
 .env.yaml
 rustserver.cfg
+
+server/lgsm/config-lgsm
+server/lgsm/data
+server/lgsm/lock
+server/lgsm/mods
+server/lgsm/modules
+server/lgsm/tmp
+
