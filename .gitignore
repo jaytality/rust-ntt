@@ -1,6 +1,7 @@
 .env.yaml
 rustserver.cfg
 
+server/log
 server/serverfiles/Bundles/
 server/serverfiles/RustDedicated_Data/
 server/serverfiles/cfg/
