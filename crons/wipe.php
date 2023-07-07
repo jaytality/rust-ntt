@@ -26,8 +26,7 @@ if(!$mysqli->real_connect(getCfg("database.host"), getCfg("database.user"), getC
     die("Connection Error (" . mysqli_connect_error() . ") " . mysqli_connect_error());
 }
 
-$execStart   = microtime(true);
-define('ROOT', dirname(__FILE__));
+$execStart = microtime(true);
 
 /**
  * send a discord message either to the public annnouncement channel or to the maintenance channel
@@ -54,7 +53,7 @@ function sendDiscordMessage($msg, $isPublic = false)
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($POST));
-    $response   = curl_exec($ch);
+    curl_exec($ch);
 }
 
 /**
@@ -168,21 +167,21 @@ function generateWipeMessage()
 
 // stop the rust server
 shell_exec('cd /home/rust/server && ./rustserver stop');
-sendDiscordMessage($getCfg('rust.server') . ' Server Stopped');
+sendDiscordMessage(getCfg('rust.server') . ' Server Stopped');
 
 // update the rust server + oxide + plugins
 shell_exec('cd /home/rust/server && ./rustserver update');
-sendDiscordMessage($getCfg('rust.server') . ' Server Updated');
+sendDiscordMessage(getCfg('rust.server') . ' Server Updated');
 
 shell_exec('cd /home/rust/server && ./rustserver mods-update');
-sendDiscordMessage($getCfg('rust.server') . ' Oxide Plugin Manager Updated');
+sendDiscordMessage(getCfg('rust.server') . ' Oxide Plugin Manager Updated');
 
 sendDiscordMessage('Updating all plugins');
 shell_exec('cd /home/rust/server/serverfiles/oxide/plugins && ./UpdatePlugins.sh');
 sendDiscordMessage('All Plugins Updated on the Server');
 
-$fp       = fopen($getCfg('rust.config'), 'a');       // updating the rust server config
-$wipedate = date('d/m');              // set date of wipe in server title to today
+$fp       = fopen(getCfg('rust.config'), 'a');       // updating the rust server config
+$wipedate = date('d/m');       // set date of wipe in server title to today
 $mapseed  = rand(1, 2147483647);      // randomised map seed
 $mapsize  = rand(4200, 4800);         // randomised world size
 fwrite($fp, 'worldsize="' . $mapsize . '"' . "\n");
@@ -192,14 +191,14 @@ fclose($fp);
 
 generateWipeMessage();
 
-sendDiscordMessage($getCfg('rust.server') . ' Server Map-Wipe initiated (SEED: ' . $weeklyseed . ')...');
+sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe initiated (SEED: ' . $mapseed . ')...');
 shell_exec('cd /home/rust/server && ./rustserver map-wipe');
-sendDiscordMessage($getCfg('rust.server') . ' Server Map-Wipe Completed');
+sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe Completed');
 
-sendDiscordMessage($getCfg('rust.server') . ' Server Starting...');
+sendDiscordMessage(getCfg('rust.server') . ' Server Starting...');
 shell_exec('cd /home/rust/server && ./rustserver start');
 
-sendDiscordMessage($getCfg('rust.server') . ' Server wiped - you can connect in 5 minutes from this announcement :tada: (SEED: ' . $mapseed . ' - ' . $mapsize . 'm)', $getCfg('discord.announce'));
+sendDiscordMessage(getCfg('rust.server') . ' Server wiped - you can connect in 5 minutes from this announcement :tada: (SEED: ' . $mapseed . ' - ' . $mapsize . 'm)', getCfg('discord.announce'));
 
 $execFinish = microtime(true);
 $runTime = ($execFinish - $execStart) / 60;
@@ -208,7 +207,7 @@ $runTime = number_format((float) $runTime, 10);
 // insert new wipe record in the DB
 $sqlWipe = "INSERT INTO `rust_wipes`
 (`server`, `address`, `size`, `seed`, `action`, `duration`) VALUES
-('" . $getCfg('rust.server') . "', '" . $getCfg('rust.address') . "', '" . $mapsize . "', '" . $mapseed ."', 'Server Wiped', '" . $runTime . "')";
+('" . getCfg('rust.server') . "', '" . getCfg('rust.address') . "', '" . $mapsize . "', '" . $mapseed ."', 'Server Wiped', '" . $runTime . "')";
 
 $result = $mysqli->query($sqlWipe);
 
