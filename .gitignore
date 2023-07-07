@@ -8,3 +8,20 @@ server/lgsm/mods
 server/lgsm/modules
 server/lgsm/tmp
 
+server/serverfiles/Bundles/
+server/serverfiles/Compiler.x86_x64
+server/serverfiles/LinuxPlayer_s.debug
+server/serverfiles/RustDedicated
+server/serverfiles/RustDedicated_Data/
+server/serverfiles/UnityPlayer.so
+server/serverfiles/UnityPlayer_s.debug
+server/serverfiles/cfg/
+server/serverfiles/libsteam_api.so
+server/serverfiles/oxide/data/
+server/serverfiles/oxide/logs/
+server/serverfiles/runds.sh
+server/serverfiles/steamapps/
+server/serverfiles/steamclient.so
+
+server/linuxgsm.sh
+server/rustserver
