@@ -139,7 +139,7 @@ function generateWipeMessage()
 
     $wipeDate = $nextMonth->format('l, jS \of F');
 
-    $wipeText = "<color=#80D000>NEXT WIPE</color> " . $wipeDate . " at 12:00pm - " . getDaylightSaving();
+    $wipeText = "<color=#80D000>NEXT WIPE</color> " . $wipeDate . " at 12:00pm - " . isDaylightSavings();
     $wipeCommand['Messages'][] = $wipeText;
 
     // adding commands to CCC
