@@ -1,0 +1,255 @@
+{
+  "Translations": {
+    "Death Messages": [
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Bullet",
+        "Messages": [
+          "{killer} shot {victim} using their {weapon} over a distance of {distance}."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Arrow",
+        "Messages": [
+          "{victim} was shot by {killer} with their {weapon} over a distance of {distance}."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Heat",
+        "Messages": [
+          "{killer} inflamed {victim} with their {weapon}."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "*",
+        "Messages": [
+          "{killer} killed {victim} using their {weapon}."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Slash",
+        "Messages": [
+          "{killer} slashed {victim} into pieces with their {weapon}."
+        ]
+      },
+      {
+        "KillerType": "*",
+        "VictimType": "Helicopter",
+        "DamageType": "*",
+        "Messages": [
+          "The {victim} was finally shot down."
+        ]
+      },
+      {
+        "KillerType": "Animal",
+        "VictimType": "Player",
+        "DamageType": "*",
+        "Messages": [
+          "{victim} couldn't run away from the {killer}."
+        ]
+      },
+      {
+        "KillerType": "Helicopter",
+        "VictimType": "Player",
+        "DamageType": "*",
+        "Messages": [
+          "{victim} had no chance against the {killer}."
+        ]
+      },
+      {
+        "KillerType": "-",
+        "VictimType": "Player",
+        "DamageType": "Fall",
+        "Messages": [
+          "{victim} fell to their death."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Suicide",
+        "Messages": [
+          "{victim} had enough of life."
+        ]
+      },
+      {
+        "KillerType": "HeatSource",
+        "VictimType": "Player",
+        "DamageType": "*",
+        "Messages": [
+          "{victim} was grilled on a {killer}."
+        ]
+      },
+      {
+        "KillerType": "*",
+        "VictimType": "Player",
+        "DamageType": "Heat",
+        "Messages": [
+          "{victim} burned to death."
+        ]
+      },
+      {
+        "KillerType": "*",
+        "VictimType": "Player",
+        "DamageType": "Radiation",
+        "Messages": [
+          "{victim} became just a touch too radioactive."
+        ]
+      },
+      {
+        "KillerType": "*",
+        "VictimType": "Player",
+        "DamageType": "Cold",
+        "Messages": [
+          "{victim} turned into an ice statue."
+        ]
+      },
+      {
+        "KillerType": "*",
+        "VictimType": "Player",
+        "DamageType": "Drowned",
+        "Messages": [
+          "As {victim} just found out, breathing underwater is rather difficult."
+        ]
+      },
+      {
+        "KillerType": "Player",
+        "VictimType": "Player",
+        "DamageType": "Collision",
+        "Messages": [
+          "{killer} ran over {victim}."
+        ]
+      }
+    ],
+    "Names": {
+      "Boar": "Boar",
+      "Wolf": "Wolf",
+      "Bear": "Bear",
+      "Helicopter": "Helicopter",
+      "Polarbear": "Polarbear",
+      "Fire": "Fire",
+      "Flame Turret": "Flame Turret",
+      "Stag": "Stag",
+      "Campfire": "Campfire",
+      "RSM": "RSM",
+      "KirbyDaTechWizz": "KirbyDaTechWizz",
+      "CHIMPNZ570": "CHIMPNZ570"
+    },
+    "Bodyparts": {
+      "Body": "Body",
+      "Head": "Head",
+      "Leg": "Leg",
+      "Hand": "Hand",
+      "Chest": "Chest",
+      "Arm": "Arm",
+      "Stomach": "Stomach",
+      "Foot": "Foot"
+    },
+    "Weapons": {
+      "Satchel Charge": "Satchel Charge",
+      "Hunting Bow": "Hunting Bow",
+      "MP5A4": "MP5A4",
+      "M39 Rifle": "M39 Rifle",
+      "Spas-12 Shotgun": "Spas-12 Shotgun",
+      "Assault Rifle": "Assault Rifle",
+      "Semi-Automatic Rifle": "Semi-Automatic Rifle",
+      "Timed Explosive Charge": "Timed Explosive Charge",
+      "L96 Rifle": "L96 Rifle",
+      "F1 Grenade": "F1 Grenade",
+      "Rock": "Rock",
+      "Pump Shotgun": "Pump Shotgun",
+      "Revolver": "Revolver",
+      "M92 Pistol": "M92 Pistol",
+      "Jackhammer": "Jackhammer",
+      "Paddle": "Paddle",
+      "Salvaged Cleaver": "Salvaged Cleaver",
+      "Crossbow": "Crossbow",
+      "Bone Club": "Bone Club",
+      "Salvaged Sword": "Salvaged Sword",
+      "Thompson": "Thompson",
+      "Bolt Action Rifle": "Bolt Action Rifle",
+      "Bone Knife": "Bone Knife",
+      "Python Revolver": "Python Revolver",
+      "Mace": "Mace",
+      "Custom SMG": "Custom SMG",
+      "LR-300 Assault Rifle": "LR-300 Assault Rifle",
+      "Waterpipe Shotgun": "Waterpipe Shotgun",
+      "40mm_grenade_he": "40mm_grenade_he",
+      "Hatchet": "Hatchet",
+      "High Velocity Rocket": "High Velocity Rocket",
+      "Torch": "Torch",
+      "Compound Bow": "Compound Bow",
+      "Salvaged Icepick": "Salvaged Icepick",
+      "Double Barrel Shotgun": "Double Barrel Shotgun",
+      "Salvaged Axe": "Salvaged Axe",
+      "Chainsaw": "Chainsaw",
+      "Stone Hatchet": "Stone Hatchet",
+      "Stone Pickaxe": "Stone Pickaxe",
+      "Beancan Grenade": "Beancan Grenade",
+      "Assault Rifle - ICE": "Assault Rifle - ICE",
+      "Combat Knife": "Combat Knife",
+      "Salvaged Hammer": "Salvaged Hammer",
+      "Semi-Automatic Pistol": "Semi-Automatic Pistol",
+      "Eoka Pistol": "Eoka Pistol",
+      "Machete": "Machete",
+      "Vehicle": "Vehicle",
+      "Flame Thrower": "Flame Thrower",
+      "Pickaxe": "Pickaxe",
+      "icepick_salvaged.entity": "icepick_salvaged.entity",
+      "Rocket": "Rocket",
+      "Wooden Spear": "Wooden Spear",
+      "Nailgun": "Nailgun",
+      "M249": "M249",
+      "ak47u_ice.entity": "ak47u_ice.entity",
+      "Butcher Knife": "Butcher Knife",
+      "HMLMG": "HMLMG",
+      "Snowball": "Snowball",
+      "2module_car_spawned.entity": "2module_car_spawned.entity",
+      "grenade.flashbang.deployed": "grenade.flashbang.deployed",
+      "Prototype 17": "Prototype 17",
+      "paddle.entity": "paddle.entity",
+      "Stone Spear": "Stone Spear",
+      "scraptransporthelicopter": "scraptransporthelicopter",
+      "Skull": "Skull"
+    },
+    "Attachments": {
+      "Weapon flashlight": "Weapon flashlight",
+      "Holosight": "Holosight",
+      "8x Zoom Scope": "8x Zoom Scope",
+      "Simple Handmade Sight": "Simple Handmade Sight",
+      "Weapon Lasersight": "Weapon Lasersight",
+      "Muzzle Brake": "Muzzle Brake",
+      "Silencer": "Silencer",
+      "16x Zoom Scope": "16x Zoom Scope",
+      "Muzzle Boost": "Muzzle Boost",
+      "Extended Magazine": "Extended Magazine"
+    }
+  },
+  "Variable Formats": {
+    "attachments": " ({value})"
+  },
+  "Variable Colors": {
+    "killer": "#C4FF00",
+    "victim": "#C4FF00",
+    "weapon": "#C4FF00",
+    "attachments": "#C4FF00",
+    "distance": "#C4FF00",
+    "owner": "#C4FF00"
+  },
+  "Chat Format": "<color=#838383>[<color=#80D000>Death</color>] {message}</color>",
+  "Chat Icon (SteamID)": "76561198077847390",
+  "Show Kills in Console": true,
+  "Show Kills in Chat": true,
+  "Message Broadcast Radius (in meters)": -1,
+  "Use Metric Distance": true,
+  "Require Permission (deathnotes.cansee)": false
+}
