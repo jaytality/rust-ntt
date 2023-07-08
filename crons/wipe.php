@@ -177,7 +177,7 @@ shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver update');
 sendDiscordMessage(getCfg('rust.server') . ' Server Updated');
 echo "\t[ UPDATED ]\n";
 
-echo "Updating oxide (" . getCfg('rust.folder') .")...\t";
+echo "Updating oxide (" . getCfg('rust.folder') .")... \t";
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver mods-update');
 sendDiscordMessage(getCfg('rust.server') . ' Oxide Plugin Manager Updated');
 echo "\t[ UPDATED ]\n";
@@ -219,12 +219,14 @@ $runTime = ($execFinish - $execStart) / 60;
 $runTime = number_format((float) $runTime, 10);
 
 // insert new wipe record in the DB
-$sqlWipe = "INSERT INTO `rust_wipes`
+echo "Updating Server Wipe Details...\t";
+$sqlWipe = "INSERT INTO `rust_wipe`
 (`server`, `address`, `size`, `seed`, `action`, `duration`) VALUES
 ('" . getCfg('rust.server') . "', '" . getCfg('rust.address') . "', '" . $mapsize . "', '" . $mapseed ."', 'Server Wiped', '" . $runTime . "')";
 
 $result = $mysqli->query($sqlWipe);
 
 $mysqli->close();
+echo "\t[ DONE ]";
 
 // end of file
