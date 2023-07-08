@@ -182,7 +182,7 @@ function isFirstFriday() {
 
 // If we are not on the first Friday of the month - exit immediately
 if (!isFirstFriday()) {
-    echo "Not first Friday of the month!";
+    echo "Not first Friday of the month!\n\n";
     exit();
 }
 
