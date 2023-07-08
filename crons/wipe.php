@@ -166,20 +166,29 @@ function generateWipeMessage()
  */
 
 // stop the rust server
+echo "Stopping server (" . getCfg('rust.folder') .")...\t";
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver stop');
 sendDiscordMessage(getCfg('rust.server') . ' Server Stopped');
+echo "\t[ STOPPED ]\n";
 
 // update the rust server + oxide + plugins
+echo "Updating server (" . getCfg('rust.folder') .")...\t";
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver update');
 sendDiscordMessage(getCfg('rust.server') . ' Server Updated');
+echo "\t[ UPDATED ]\n";
 
+echo "Updating oxide (" . getCfg('rust.folder') .")...\t";
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver mods-update');
 sendDiscordMessage(getCfg('rust.server') . ' Oxide Plugin Manager Updated');
+echo "\t[ UPDATED ]\n";
 
+echo "Updating Oxide Plugins (" . getCfg('rust.folder') .")...\t";
 sendDiscordMessage('Updating all plugins');
 shell_exec('cd ' . getCfg('rust.plugins') . ' && ./UpdatePlugins.sh');
 sendDiscordMessage('All Plugins Updated on the Server');
+echo "\t[ UPDATED ]\n";
 
+echo "Generating Server Name Update...\n";
 $fp       = fopen(getCfg('rust.config'), 'a');       // updating the rust server config
 $wipedate = date('d/m');       // set date of wipe in server title to today
 $mapseed  = rand(1, 2147483647);      // randomised map seed
@@ -189,14 +198,19 @@ fwrite($fp, 'seed="' . $mapseed . '"' . "\n");
 fwrite($fp, 'servername="[AU] ' . $wipedate . ' Snacks | Vanilla | No Tech Tree"' . "\n");
 fclose($fp);
 
+echo "Generating Wipe Date Message for Custom Chat Commands...\n";
 generateWipeMessage();
 
+echo "Wiping server (" . getCfg('rust.folder') .")...\t";
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe initiated (SEED: ' . $mapseed . ')...');
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver map-wipe');
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe Completed');
+echo "\t[ WIPED ] - SEED: {$mapseed}, SIZE: {$mapsize}\n";
 
+echo "Starting server (" . getCfg('rust.folder') .")...\t";
 sendDiscordMessage(getCfg('rust.server') . ' Server Starting...');
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver start');
+echo "\t[ STARTED ]\n";
 
 sendDiscordMessage(getCfg('rust.server') . ' Server wiped - you can connect in 5 minutes from this announcement :tada: (SEED: ' . $mapseed . ' - ' . $mapsize . 'm)', getCfg('discord.announce'));
 
