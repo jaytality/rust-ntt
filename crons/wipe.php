@@ -122,7 +122,6 @@ function generateWipeMessage()
 
     // welcomer plugin array
     $welcomer = [
-        "WelcomeMessage" => "",
         "JoinMessage" => "Player {0} has joined the server",
         "JoinMessageUnknown" => "Player {0} has joined the server",
         "LeaveMessage" => "Player {0} has left the server. Reason {1}"
