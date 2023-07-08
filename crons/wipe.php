@@ -64,6 +64,7 @@ function sendDiscordMessage($msg, $isPublic = false)
  *
  * @param string $timezoneStr
  * @return boolean
+ * @throws Exception
  */
 function isDaylightSavings($timezoneStr = 'Australia/Sydney') {
     $date = new DateTime('now', new DateTimeZone($timezoneStr));
@@ -77,7 +78,6 @@ function isDaylightSavings($timezoneStr = 'Australia/Sydney') {
  *
  * this also generates a welcomer message which will display the next wipe date as well
  *
- * @param string $scope
  * @return void
  */
 function generateWipeMessage()
@@ -182,6 +182,7 @@ function isFirstFriday() {
 
 // If we are not on the first Friday of the month - exit immediately
 if (!isFirstFriday()) {
+    echo "Not first Friday of the month!";
     exit();
 }
 
@@ -225,7 +226,7 @@ echo "Wiping server (" . getCfg('rust.folder') .")...\t";
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe initiated (SEED: ' . $mapseed . ')...');
 shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver map-wipe');
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe Completed');
-echo "\t[ WIPED ] - SEED: {$mapseed}, SIZE: {$mapsize}\n";
+echo "\t[ WIPED ] - SEED: $mapseed, SIZE: $mapsize\n";
 
 echo "Starting server (" . getCfg('rust.folder') .")...\t";
 sendDiscordMessage(getCfg('rust.server') . ' Server Starting...');
