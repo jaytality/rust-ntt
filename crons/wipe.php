@@ -155,6 +155,22 @@ function generateWipeMessage()
 }
 
 /**
+ * Checks if today is the first Friday of the month.
+ *
+ * @return bool Returns true if today is the first Friday of the month, false otherwise.
+ */
+function isFirstFriday() {
+    $today = date('Y-m-d');
+    $dayOfWeek = date('N', strtotime($today));  // Get the numeric representation of the day of the week (1 for Monday, 7 for Sunday).
+
+    if ($dayOfWeek == 5 && date('j', strtotime($today)) <= 7) {
+        return true;
+    }
+
+    return false;
+}
+
+/**
  * WIPE SERVER FUNCTIONALITY
  *
  * Below is the direct execution of server wipe functionality; this might be different based on the server (3x, NTT, Vanilla)
@@ -164,6 +180,11 @@ function generateWipeMessage()
  *
  * THIS SERVER IS: NTT
  */
+
+// If we are not on the first Friday of the month - exit immediately
+if (!isFirstFriday()) {
+    exit();
+}
 
 // stop the rust server
 echo "Stopping server (" . getCfg('rust.folder') .")...\t";
