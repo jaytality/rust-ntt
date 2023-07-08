@@ -166,18 +166,18 @@ function generateWipeMessage()
  */
 
 // stop the rust server
-shell_exec('cd /home/rust/server && ./rustserver stop');
+shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver stop');
 sendDiscordMessage(getCfg('rust.server') . ' Server Stopped');
 
 // update the rust server + oxide + plugins
-shell_exec('cd /home/rust/server && ./rustserver update');
+shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver update');
 sendDiscordMessage(getCfg('rust.server') . ' Server Updated');
 
-shell_exec('cd /home/rust/server && ./rustserver mods-update');
+shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver mods-update');
 sendDiscordMessage(getCfg('rust.server') . ' Oxide Plugin Manager Updated');
 
 sendDiscordMessage('Updating all plugins');
-shell_exec('cd /home/rust/server/serverfiles/oxide/plugins && ./UpdatePlugins.sh');
+shell_exec('cd ' . getCfg('rust.plugins') . ' && ./UpdatePlugins.sh');
 sendDiscordMessage('All Plugins Updated on the Server');
 
 $fp       = fopen(getCfg('rust.config'), 'a');       // updating the rust server config
@@ -192,11 +192,11 @@ fclose($fp);
 generateWipeMessage();
 
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe initiated (SEED: ' . $mapseed . ')...');
-shell_exec('cd /home/rust/server && ./rustserver map-wipe');
+shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver map-wipe');
 sendDiscordMessage(getCfg('rust.server') . ' Server Map-Wipe Completed');
 
 sendDiscordMessage(getCfg('rust.server') . ' Server Starting...');
-shell_exec('cd /home/rust/server && ./rustserver start');
+shell_exec('cd ' . getCfg('rust.folder') . ' && ./rustserver start');
 
 sendDiscordMessage(getCfg('rust.server') . ' Server wiped - you can connect in 5 minutes from this announcement :tada: (SEED: ' . $mapseed . ' - ' . $mapsize . 'm)', getCfg('discord.announce'));
 
